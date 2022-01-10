@@ -1,7 +1,7 @@
 project:=aws-msa-sample
 
 .PHONY: default
-default: update start
+default: stop update start
 
 .PHONY: start
 start: 
