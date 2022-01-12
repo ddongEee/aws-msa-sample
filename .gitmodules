@@ -1,8 +1,8 @@
 [submodule "aws-msa-sample-monolith"]
 	path = aws-msa-sample-monolith
 	url = git@github.com:ddongEee/aws-msa-sample-monolith.git
-  branch = develop
+    branch = develop
 [submodule "aws-msa-sample-delivery"]
 	path = aws-msa-sample-delivery
 	url = git@github.com:ddongEee/aws-msa-sample-delivery.git
-  branch = develop
+    branch = develop
