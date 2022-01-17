@@ -3,6 +3,9 @@ project:=aws-msa-sample
 .PHONY: default
 default: stop update start
 
+.PHONY: restart
+restart: stop start
+
 .PHONY: start
 start: 
 	- ./bin/start.sh

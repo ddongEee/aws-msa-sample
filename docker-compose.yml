@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   zookeeper:
     image: confluentinc/cp-zookeeper:6.2.1
@@ -27,3 +27,15 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
       #KAFKA_CREATE_TOPICS: "XCION_SBC_TBL_UNITED:1:1,NSCN_SBC_TBL:1:1" # Topic명:Partition개수:Replica개수
+
+  traefik:
+    image: traefik:2.5
+    labels:
+      - traefik.enable=false
+    command: --web --docker --docker.domain=docker.localhost --logLevel=DEBUG
+    ports:
+      - "80:80"   # live traffic
+      - "9880:8080" # admin UI
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik.yaml:/etc/traefik/traefik.yaml

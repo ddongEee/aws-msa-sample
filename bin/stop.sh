@@ -9,4 +9,3 @@ cd $wkdr/aws-msa-sample-delivery && make stop
 cd $wkdr
 make proxystop
 unset wkdr
-
